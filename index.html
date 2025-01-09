@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Komiksów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu" class="container">
+    <div class="menu">
+        <button onclick="loadGallery('Incydent mar',4)">Incydent Mar</button>
+    </div>
+</div>
+
+<div id="gallery" class="container" style="display: none;">
+    <h2 id="comic-name"></h2>
+
+    <img id="image" src="" alt="Obrazek">
+    <div class="buttons-container">
+        <button id="prev-button" onclick="changeImage('prev')">&#9756;</button> <!-- Strzałka w lewo -->
+        <button id="next-button" onclick="changeImage('next')">&#9758;</button> <!-- Strzałka w prawo -->
+    </div>
+
+    <div id="page-info" class="page-info">
+        Strona <span id="current-page">1</span> z <span id="total-pages">1</span>
+    </div>
+
+</div>
+
+
+<script src="code.js"></script>
+
+</body>
+</html>
