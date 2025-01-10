@@ -8,26 +8,76 @@
 </head>
 <body>
 
-<div id="menu" class="container">
+<div id="pre_menu" class="container">
     <div class="menu">
-        <button onclick="loadGallery('Incydent mar',4)">Incydent Mar</button>
+        <button onclick="openMenu('menu-Rodzina-Zbui-Tale-Another-Day')">Rodzina Zbui Tale Another Day</button>
+        <button onclick="openMenu('menu-Rodzina-Zbui-One-Shot')">Rodzina Zbui One Shot</button>
+        <button onclick="openMenu('menu-Rodzina-Zbui-Shorts')">Rodzina Shorts</button>
+        <button onclick="openMenu('menu-Rodzina-Zbui-Genesis')">Genesis</button>
+        <button onclick="openMenu('menu-Rodzina-Zbui-Bastard-Blood')">Rodzina Zbui Bastard Blood</button>
     </div>
 </div>
 
-<div id="gallery" class="container" style="display: none;">
-    <h2 id="comic-name"></h2>
-
-    <img id="image" src="" alt="Obrazek">
-    <div class="buttons-container">
-        <button id="prev-button" onclick="changeImage('prev')">&#9756;</button> <!-- Strzałka w lewo -->
-        <button id="next-button" onclick="changeImage('next')">&#9758;</button> <!-- Strzałka w prawo -->
+<div id="menu-Rodzina-Zbui-Tale-Another-Day" class="container" style="display: none;">
+    <div class="menu">
+        <button onclick="loadGallery('1', 4)">TOM I</button>
+        <button onclick="openMenu('pre_menu')">Powrót</button>
     </div>
+</div>
 
+<div id="menu-Rodzina-Zbui-One-Shot" class="container" style="display: none;">
+    <div class="menu">
+        <button onclick="loadGallery('1', 4)">TOM I</button>
+        <button onclick="openMenu('pre_menu')">Powrót</button>
+    </div>
+</div>
+
+<div id="menu-Rodzina-Zbui-Shorts" class="container" style="display: none;">
+    <div class="menu">
+        <button onclick="loadGallery('Incydent Marcowy', 4)">Incydent Marcowy</button>
+        <button onclick="loadGallery('TOM II', 5)">TOM II</button>
+        <button onclick="loadGallery('TOM III', 4)">TOM III</button>
+        <button onclick="openMenu('pre_menu')">Powrót</button>
+    </div>
+</div>
+
+
+<div id="menu-Rodzina-Zbui-Genesis" class="container" style="display: none;">
+    <div class="menu">
+        <button onclick="loadGallery('TOM I', 4)">TOM I</button>
+        <button onclick="loadGallery('TOM II', 5)">TOM II</button>
+        <button onclick="loadGallery('TOM III', 4)">TOM III</button>
+        <button onclick="openMenu('pre_menu')">Powrót</button>
+    </div>
+</div>
+
+<div id="menu-Rodzina-Zbui-Bastard-Blood" class="container" style="display: none;">
+    <div class="menu">
+        <button onclick="loadGallery('TOM I', 4)">TOM I</button>
+        <button onclick="loadGallery('TOM II', 5)">TOM II</button>
+        <button onclick="loadGallery('TOM III', 4)">TOM III</button>
+        <button onclick="openMenu('pre_menu')">Powrót</button>
+    </div>
+</div>
+
+
+<div id="gallery" class="container" style="display: none;">
+    <img id="logo" src="logo.png" alt="Logo" />
+    <h2 id="comic-name"></h2>
+    <div class="image-container">
+        <img id="image" src="" alt="Obrazek">
+        <div class="zoom-lens"></div>
+    </div>
+    <div class="buttons-container">
+        <button id="prev-button" onclick="changeImage('prev')">&#9756;</button>
+        <button id="next-button" onclick="changeImage('next')">&#9758;</button> 
+    </div>
     <div id="page-info" class="page-info">
         Strona <span id="current-page">1</span> z <span id="total-pages">1</span>
     </div>
-
 </div>
+<button id="main-menu" onclick="openMenu('pre_menu')">Powrót do menu głównego</button>
+
 
 
 <script src="code.js"></script>

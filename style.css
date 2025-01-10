@@ -21,10 +21,10 @@ body {
 
 img {
     max-width: auto;
-    max-height: 80vh;
+    max-height: 75vh;
     object-fit: contain;
-    border-color: black; 
-    box-shadow: 0 4px 12px black; 
+    border-color: black;
+    box-shadow: 0 4px 12px black;
     border-radius: 10px;
 }
 
@@ -97,14 +97,41 @@ img {
 
 
 #comic-name {
-    font-size: 24px; /* Rozmiar czcionki */
-    font-weight: bold; /* Pogrubienie czcionki */
-    color:black; /* Kolor tekstu - pomarańczowy/czerwony */
-    margin-bottom: 20px; /* Odstęp od reszty treści */
-    font-family: 'Comic Sans MS', sans-serif; /* Fajna czcionka */
-    text-transform: uppercase; /* Ustawienie tekstu na wielkie litery */
-    letter-spacing: 2px; /* Rozstawienie liter */
+    font-size: 12px; 
+    font-weight: bold; 
+    color:black; 
+    margin-bottom: 20px; 
+    font-family: 'Comic Sans MS', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+#main-menu {
+    position: fixed; /* Przywiązanie do okna przeglądarki */
+    bottom: 20px; /* Odległość od dolnej krawędzi */
+    right: 20px; /* Odległość od prawej krawędzi */
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px; /* Wewnętrzne odstępy */
+    font-size: 18px; 
+    font-family: 'Comic Sans MS', sans-serif; 
+    text-transform: uppercase; 
+    border: none; 
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    cursor: pointer; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Cień dla lepszego wyglądu */
+    z-index: 1000; /* Zapewnia widoczność */
+    text-align: center; /* Środkowanie tekstu w przycisku */
 }
 
 
-
+#logo {
+    max-width: 300px; 
+    height: auto; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none; /* Usuwa ramkę */
+    outline: none; /* Usuwa zewnętrzne obramowanie (np. linków) */
+    box-shadow: none; /* Usuwa ewentualne cienie przypominające ramki */
+}

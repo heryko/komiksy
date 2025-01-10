@@ -1,28 +1,49 @@
-let currentIndex = 0;
-let currentImages = [];
+let currentIndex = 0; // Aktualny indeks obrazka
+let currentImages = []; // Lista obrazków w bieżącej galerii
 
+// Funkcja otwierająca wybrane menu
+function openMenu(menuId) {
+    // Ukryj wszystkie sekcje
+    const menus = document.querySelectorAll('.container');
+    menus.forEach(menu => {
+        menu.style.display = 'none';
+    });
+
+    // Wyświetl wybrane menu
+    const selectedMenu = document.getElementById(menuId);
+    if (selectedMenu) {
+        selectedMenu.style.display = 'block';
+    } else {
+        console.error(`Menu with id "${menuId}" not found.`);
+    }
+}
+
+// Funkcja wczytująca galerię dla wybranego komiksu
 function loadGallery(komiks, totalImages) {
-    // Przejście do galerii
-    document.getElementById('menu').style.display = 'none';
+    // Ukryj wszystkie sekcje
+    document.querySelectorAll('.container').forEach(menu => menu.style.display = 'none');
+
+    // Pokaż galerię
     document.getElementById('gallery').style.display = 'block';
 
-    // Ustawienie nazwy komiksu w górnej części galerii
-    document.getElementById('comic-name').textContent = komiks;  // Ustawienie nazwy komiksu
+    // Ustaw nazwę komiksu
+    document.getElementById('comic-name').textContent = komiks;
 
-    // Generowanie listy obrazów na podstawie folderu i liczby plików
+    // Przygotuj listę obrazków w galerii
     currentImages = [];
     for (let i = 1; i <= totalImages; i++) {
-        currentImages.push(`${komiks}/${i}.jpg`);
+        currentImages.push(`${komiks}/${i}.jpg`); // Ścieżki obrazków
     }
 
-    // Ustawienie pierwszego obrazu
+    // Ustaw pierwszy obrazek
     currentIndex = 0;
     document.getElementById('image').src = currentImages[currentIndex];
 
-    // Aktualizacja numeru strony
+    // Zaktualizuj informacje o numerze strony
     updatePageInfo(totalImages);
 }
 
+// Funkcja zmieniająca obrazek w galerii
 function changeImage(direction) {
     if (direction === 'prev') {
         currentIndex = (currentIndex === 0) ? currentImages.length - 1 : currentIndex - 1;
@@ -30,15 +51,16 @@ function changeImage(direction) {
         currentIndex = (currentIndex === currentImages.length - 1) ? 0 : currentIndex + 1;
     }
 
-    // Ustawienie nowego obrazu
+    // Ustaw nowy obrazek
     document.getElementById('image').src = currentImages[currentIndex];
 
-    // Aktualizacja numeru strony
+    // Zaktualizuj informacje o numerze strony
     updatePageInfo(currentImages.length);
 }
 
-// Funkcja do aktualizacji numeru strony
+// Funkcja aktualizująca numer strony
 function updatePageInfo(totalImages) {
-    document.getElementById('current-page').textContent = currentIndex + 1;  // Dodajemy 1, bo numeracja zaczyna się od 1
+    document.getElementById('current-page').textContent = currentIndex + 1; // Dodaj 1 do indeksu
     document.getElementById('total-pages').textContent = totalImages;
 }
+
